@@ -1,14 +1,3 @@
-/**
- * geoip-asn
- *
- * asn.mjs
- *
- * (c) 2022 Wany
- *
- * @summary Get asn of ip
- * @author Wany <sung@wany.io>
- */
-
 import fs from 'fs';
 import IP from '@wanyne/ip';
 
