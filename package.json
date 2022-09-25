@@ -1,6 +1,6 @@
 {
   "name": "geoipasn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "GeoIP query tool with AS number",
   "author": "Wany <sung@wany.io> (https://wany.io)",
   "main": "lib/index.js",
@@ -24,6 +24,7 @@
     "babel": "npx babel src --out-file-extension .js --out-dir lib"
   },
   "dependencies": {
+    "@wanyne/ip": "^1.0.0",
     "geoip-lite": "1.4.2"
   },
   "devDependencies": {

@@ -10,7 +10,7 @@
  */
 
 import fs from 'fs';
-import IP from './ip.mjs';
+import IP from '@wanyne/ip';
 
 import path from 'path';
 import { fileURLToPath } from 'url';

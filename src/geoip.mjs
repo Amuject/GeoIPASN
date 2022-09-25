@@ -10,7 +10,7 @@
  */
 
 import fs from 'fs';
-import IP from './ip.mjs';
+import IP from '@wanyne/ip';
 import asn from './asn.mjs';
 import geoip from 'geoip-lite';
 
