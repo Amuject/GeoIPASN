@@ -1,4 +1,4 @@
-# geoipasn
+# GeoIPASN
 
 GeoIP query tool with AS Number
 

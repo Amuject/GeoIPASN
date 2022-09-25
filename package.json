@@ -1,6 +1,6 @@
 {
   "name": "geoipasn",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GeoIP query tool with AS number",
   "author": "Wany <sung@wany.io> (https://wany.io)",
   "main": "lib/index.js",
@@ -14,10 +14,10 @@
     "geolocation",
     "coordinate"
   ],
-  "homepage": "https://github.com/wnynya/geoipasn#readme",
+  "homepage": "https://github.com/wnynya/GeoIPASN#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wnynya/geoipasn.git"
+    "url": "https://github.com/wnynya/GeoIPASN.git"
   },
   "scripts": {
     "query": "node lib/index.js",
