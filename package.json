@@ -1,6 +1,6 @@
 {
   "name": "geoipasn",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "GeoIP query tool with AS number",
   "author": "Wany <sung@wany.io> (https://wany.io)",
   "main": "lib/index.js",
