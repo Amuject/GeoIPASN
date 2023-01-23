@@ -1,5 +1,5 @@
 import fs from 'fs';
-import IP from '@wanyne/ip';
+import IP from '@wnynya/ip';
 
 import path from 'path';
 import { fileURLToPath } from 'url';

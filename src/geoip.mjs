@@ -1,5 +1,5 @@
 import fs from 'fs';
-import IP from '@wanyne/ip';
+import IP from '@wnynya/ip';
 import asn from './asn.mjs';
 import geoip from 'geoip-lite';
 
