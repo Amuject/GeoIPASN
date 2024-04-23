@@ -6,10 +6,10 @@ import { fileURLToPath } from 'url';
 const ___filename = fileURLToPath(import.meta.url);
 const ___dirname = path.dirname(___filename);
 const ip2as = JSON.parse(
-  fs.readFileSync(path.resolve(___dirname, '../data/asn-ip-as.json'))
+  fs.readFileSync(path.resolve(___dirname, '../data/IPv4-ASN.json'))
 );
 const as2name = JSON.parse(
-  fs.readFileSync(path.resolve(___dirname, '../data/asn-as-name.json'))
+  fs.readFileSync(path.resolve(___dirname, '../data/ASN-name.json'))
 );
 
 /**
@@ -29,17 +29,17 @@ function query(ip) {
     return result;
   }
 
-  const ipa = new IP(ip);
+  const target = new IP(ip);
 
-  const m = ip.match(/(\d+)\.(\d+\.\d+\.\d+)/);
-  if (!m) {
+  const [ip1, ip2] = ip.split(/\.(\d+\.\d+\.\d+)$/s);
+
+  if (!ip1) {
     return result;
   }
-  const fn = m[1] * 1;
-  const set = ip2as[fn];
-  for (const key in set) {
-    if (ipa.in(new IP(fn + '.' + key))) {
-      result.number = set[key] * 1;
+
+  for (const ip2s in ip2as[ip1]) {
+    if (target.in(new IP(ip1 + '.' + ip2s))) {
+      result.number = ip2as[ip1][ip2s];
       result.name = as2name[result.number];
       break;
     }

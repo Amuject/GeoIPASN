@@ -1,5 +1,0 @@
-GeoIP data from geoip-lite using MaxMind's GeoLite2 database
-cd node_modules/geoip-lite
-npm run-script updatedb license_key=[KEY]
-
-ASN data from thyme.apnic.net/current/data-raw-table and thyme.apnic.net/current/data-used-autnums

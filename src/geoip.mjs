@@ -11,10 +11,12 @@ const alpha2 = JSON.parse(
   fs.readFileSync(path.resolve(___dirname, '../data/ISO-3166-1-alpha-2.json'))
 );
 const regions = JSON.parse(
-  fs.readFileSync(path.resolve(___dirname, '../data/regions.json'))
+  fs.readFileSync(
+    path.resolve(___dirname, '../data/ISO-3166-1-alpha-2-regions.json')
+  )
 );
 const serviceRanges = JSON.parse(
-  fs.readFileSync(path.resolve(___dirname, '../data/service-ip-ranges.json'))
+  fs.readFileSync(path.resolve(___dirname, '../data/IPv4-service-ranges.json'))
 );
 
 /**
@@ -82,7 +84,7 @@ function query(ip) {
   result.coordinate.latitude = data?.ll[0] ? data.ll[0] : -1;
   result.coordinate.longtitude = data?.ll[1] ? data.ll[1] : -1;
   result.coordinate.range = data?.area ? data.area : -1;
-  result.timezone = data?.timezone ? data.timezone : '';
+  result.timezone = data?.timezone ? data.timezone : 'UTC';
   result.time = new Date(
     new Date().toLocaleString('en-US', { timeZone: result.timezone })
   );

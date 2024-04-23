@@ -2,7 +2,7 @@
   "name": "geoipasn",
   "version": "1.0.5",
   "description": "GeoIP query tool with AS number",
-  "author": "Wany <sung@wany.io> (https://wany.io)",
+  "author": "Wany <sung@wanyne.com> (https://wanyne.com)",
   "main": "lib/index.js",
   "exports": {
     "require": "./lib/index.js",
@@ -14,10 +14,10 @@
     "geolocation",
     "coordinate"
   ],
-  "homepage": "https://github.com/wnynya/GeoIPASN#readme",
+  "homepage": "https://github.com/Amuject/GeoIPASN#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wnynya/GeoIPASN.git"
+    "url": "https://github.com/Amuject/GeoIPASN.git"
   },
   "scripts": {
     "query": "node lib/index.js",
@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@wnynya/ip": "^0.8.0",
-    "geoip-lite": "^1.4.2"
+    "geoip-lite": "^1.4.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
