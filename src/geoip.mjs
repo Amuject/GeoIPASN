@@ -1,5 +1,5 @@
 import fs from 'fs';
-import IP from '@wnynya/ip';
+import IP from '@amuject/ip';
 import asn from './asn.mjs';
 import geoip from 'geoip-lite';
 
@@ -26,6 +26,10 @@ const serviceRanges = JSON.parse(
  * @param {string} ip
  */
 function query(ip) {
+  if (typeof ip === 'string') {
+    ip = new IP(ip);
+  }
+
   let result = {
     ip: ip,
     country: {
@@ -56,9 +60,8 @@ function query(ip) {
     return result;
   }
 
-  const ipa = new IP(ip);
-  result.service = getService(ipa);
-  let bogon = ipa.getBogon();
+  result.service = getService(ip);
+  let bogon = ip.getBogon();
   if (bogon) {
     result.country.name = bogon;
     result.timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -68,7 +71,7 @@ function query(ip) {
   }
   bogon ? (result.country.name = bogon) : null;
 
-  let data = geoip.lookup(ip);
+  let data = geoip.lookup(ip.label);
   if (!data) {
     return result;
   }
@@ -97,9 +100,9 @@ function query(ip) {
 
 query.asn = asn;
 
-function getService(ipa) {
+function getService(ip) {
   for (const key in serviceRanges) {
-    if (ipa.in(new IP(key))) {
+    if (ip.in(new IP(key))) {
       return serviceRanges[key];
     }
   }

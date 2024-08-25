@@ -1,5 +1,5 @@
 import fs from 'fs';
-import IP from '@wnynya/ip';
+import IP from '@amuject/ip';
 
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -19,6 +19,10 @@ const as2name = JSON.parse(
  * @param {string} ip
  */
 function query(ip) {
+  if (typeof ip === 'string') {
+    ip = new IP(ip);
+  }
+
   let result = {
     ip: ip,
     number: null,
@@ -29,16 +33,14 @@ function query(ip) {
     return result;
   }
 
-  const target = new IP(ip);
-
-  const [ip1, ip2] = ip.split(/\.(\d+\.\d+\.\d+)$/s);
+  const [ip1, ip2] = ip.label.split(/\.(\d+\.\d+\.\d+)$/s);
 
   if (!ip1) {
     return result;
   }
 
   for (const ip2s in ip2as[ip1]) {
-    if (target.in(new IP(ip1 + '.' + ip2s))) {
+    if (ip.in(new IP(ip1 + '.' + ip2s))) {
       result.number = ip2as[ip1][ip2s];
       result.name = as2name[result.number];
       break;

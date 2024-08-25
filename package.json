@@ -1,6 +1,6 @@
 {
   "name": "geoipasn",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "GeoIP query tool with AS number",
   "author": "Wany <sung@wanyne.com> (https://wanyne.com)",
   "main": "lib/index.js",
@@ -20,11 +20,12 @@
     "url": "https://github.com/Amuject/GeoIPASN.git"
   },
   "scripts": {
+    "update": "node data/update.mjs",
     "query": "node lib/index.js",
     "babel": "npx babel src --out-file-extension .js --out-dir lib"
   },
   "dependencies": {
-    "@wnynya/ip": "^0.8.0",
+    "@amuject/ip": "^1.0.1",
     "geoip-lite": "^1.4.10"
   },
   "devDependencies": {
